@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day2</title>
+  </head>
+  <body>
+    <h1>Welcome to Day 2</h1>
+    x<sup>2</sup>- y<sup>2</sup>=(x+y)(x-y)
+    log<sub>10</sub> = 1.4
+    <form novalidate >
+      <fieldset>
+        <legend align="center">Signup</legend>
+        <div>
+          <label for="userName"> Name <sup style="color: red;">*</sup></label>
+          <input
+            maxlength="5"
+            placeholder="Enter user name"
+            name="name"
+            type="text"
+            id="userName"
+            required
+            autofocus
+          />
+        </div>
+        <div>
+          <label for="userPhone"> Phone </label>
+          <input type="tel" name="phone" id="userPhone" />
+        </div>
+        <div>
+          <label for="userEmail"> Email </label>
+          <input type="email"  autofocus name="email" id="userEmail" />
+        </div>
+        <div>
+          <label for="userPass"> Password </label>
+          <input type="password" name="password" id="userPass" />
+        </div>
+        <div>
+          <span>Gender:</span>
+          <label for="male"> Male </label>
+          <input name="gender" type="radio" id="male" />
+          <label for="female"> Female </label>
+          <input name="gender" type="radio" id="female" />
+          <label for="other"> Other </label>
+          <input name="gender" type="radio" id="other" />
+        </div>
+        <div>
+          <label for="terms">I agree with Terms & conditions</label>
+          <input id="terms" type="checkbox" />
+        </div>
+        <div>
+          <label for="terms">I agree with Terms & conditions</label>
+          <input id="terms" type="checkbox" />
+        </div>
+        <div>
+          <label for="team"> Favourite IPL Team </label>
+          <select id="team" name="team">
+            <option value="" disabled selected>Choose Team</option>
+            <optgroup label="Topppers">
+              <option value="csk">CSK</option>
+              <option value="rcb">RCB</option>
+            </optgroup>
+            <optgroup label="Smart">
+              <option value="lsg">LSG</option>
+              <option value="kkr">KKR</option>
+            </optgroup>
+            <optgroup label="Hustlers">
+              <option value="mi">MI</option>
+              <option value="pkx">PKXII</option>
+              <option value="dc">DC</option>
+            </optgroup>
+          </select>
+        </div>
+        <div>
+          <label for="file">Select File</label>
+          <input type="file" />
+        </div>
+        <div>
+          <label for="search">Search</label>
+          <input type="search" />
+        </div>
+        <div>
+          <label> Find Student </label>
+          <input type="search" list="students-list" />
+          <datalist id="students-list">
+            <option value="Parag"></option>
+            <option value="Satyam"></option>
+            <option value="Dhanjyoti"></option>
+            <option value="Shikhar"></option>
+            <option value="Mithun"></option>
+          </datalist>
+        </div>
+        <div>
+          <input step="10" type="range" />
+          <input type="number" min="20" max="100" placeholder="Enter amount" />
+        </div>
+        <div>
+          <label for="bio"> About</label>
+          <textarea
+            rows="4"
+            name="bio"
+            id="bio"
+            placeholder="Tell us about yourself..."
+          ></textarea>
+        </div>
+        
+      </fieldset>
+      <input type="submit" value="Submit me"/>
+    </form>
+    
+  </body>
+</html>

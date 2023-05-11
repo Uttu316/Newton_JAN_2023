@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS</title>
+    <link href="./style.css" rel="stylesheet" />
+    <style>
+      /* universal selector */
+      * {
+        margin: 0;
+      }
+      h1 {
+        margin: 10px;
+      }
+      /* tag selector */
+      h2 {
+        background-color: red;
+        color: white;
+      }
+
+      /* class selcotor */
+      .student-list-item {
+        padding: 10px;
+        color: salmon;
+      }
+      /* id selector */
+      #topper {
+        color: gold;
+      }
+
+      /* descendant selectors */
+      ol li {
+        color: blue;
+      }
+      .student-list-item span {
+        background-color: yellow;
+        color: blueviolet;
+      }
+      /* child selector */
+      .container > p {
+        color: pink;
+      }
+      /* adjacent sibling selector */
+      .heading + p {
+        color: cyan;
+      }
+      /* general sibling selector */
+      .heading ~ p {
+        color: crimson;
+      }
+      a:visited {
+        color: green;
+      }
+      a:active {
+        color: deeppink;
+      }
+      button:active {
+        color: blue;
+      }
+      /* combination selector */
+      .child-container,
+      .child-sibling-container {
+        border: 2px solid brown;
+      }
+      .box p:first-child {
+        color: brown;
+      }
+      .box p:nth-child(2) {
+        color: darkblue;
+      }
+      .box p:nth-last-child(2) {
+        color: crimson;
+      }
+      li:nth-child(odd) {
+        color: #777;
+      }
+      li:nth-child(even) {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="color: blue; font-size: 40px">Welcome to Learn CSS</h1>
+    <h1>Welcome to Learn CSS</h1>
+    <h1>Welcome to Learn CSS</h1>
+    <h2>Jan Batch</h2>
+    <ul>
+      <li class="student-list-item">Parag</li>
+      <li class="student-list-item" id="topper">Satyam</li>
+      <li class="student-list-item">
+        <p>
+          Mithun
+          <span> He Loves Cricket </span>
+        </p>
+      </li>
+      <li class="student-list-item">Nithiya</li>
+    </ul>
+    <ol>
+      <li>Ayush</li>
+      <li>Ramitha</li>
+    </ol>
+    <div class="container">
+      <p>I am elder AI Robot</p>
+      <p class="heading">Hello I am AI, I am ready to take your JOB.</p>
+      <p class="subheading">I am an AI Robot, from Patna.</p>
+      <p class="subheading">I am an AI Robot's wife, from Agra.</p>
+      <div class="child-container">
+        <p>Don't worry, AI Dissmised.</p>
+      </div>
+      <div class="child-sibling-container">
+        <p>I a AI Sibling</p>
+      </div>
+    </div>
+    <a href="https://www.amazon.in"> Visit Amazon </a>
+    <a href="https://www.flipkart.com"> Visit Flipkart </a>
+    <div class="box">
+      <p>RCB</p>
+      <p>LSG</p>
+      <p>KKR</p>
+      <p>RR</p>
+      <div>CSK</div>
+      <div>MI</div>
+    </div>
+    <div class="box">
+      <h1>IPL Table</h1>
+      <p>RCB</p>
+      <p>LSG</p>
+      <p>KKR</p>
+      <p>RR</p>
+      <p>CSK</p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Potfolio</title>
+    <style>
+        html{
+         scroll-behavior: smooth;   
+        }
+        body{
+            margin: 0;
+        }
+        header{
+            padding: 20px;
+            background-color: salmon;
+        }
+        nav a{
+            padding: 10px;
+            color: white;
+            text-decoration:none ;
+            text-transform: uppercase;
+            margin-right: 10px;
+        }
+        section{
+            height: 300px;
+            border: 2px solid brown;
+            margin: 20px;
+            padding: 40px;
+        }
+        footer{
+            padding: 40px;
+            color: white;
+            background-color: black;
+            text-align: center;
+        }
+        footer a{
+            color: white;
+        }
+        form input:focus{
+          outline: 1px solid yellow;
+        }
+        form textarea:focus{
+          outline: 1px solid yellow;
+        }
+        form input,form textarea{
+          border: 1px solid brown;
+        }
+    </style>
+  </head>
+  <body>
+    <header >
+      <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skilss</a>
+        <a href="#expirences">Expirences</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+    <main>
+      <section id="hero-section">
+        <h1>Welcome to my world</h1>
+      </section>
+      <section id="about">
+        <h4>About</h4>
+        <article>
+          <p>
+            I am software developer with 4 years of expirence working at
+            Housing.com
+          </p>
+        </article>
+      </section>
+      <section id="skills">
+        <h4>My Skills</h4>
+        <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>Javascript</li>
+          <li>React</li>
+          <li>Webpack</li>
+          <li>Node</li>
+          <li>Firebase</li>
+          <li>AWS</li>
+          <li>React Native</li>
+        </ul>
+      </section>
+      <section id="expirences">
+        <h4>
+            My Journey
+        </h4>
+        <ul>
+          <li>Housing.com - (9th May 2022 - till now)</li>
+          <li>Fynd (Shopsense Pvt. Ltd) - (15th Dec 2021 - 8th may 2022)</li>
+        </ul>
+      </section>
+      <section id="contact">
+        <h4>Contact Me</h4>
+        <form>
+          <div>
+            <label for="name"> Name: </label>
+            <input id="name" name="name" placeholder="Enter you name" />
+          </div>
+          <div>
+            <label for="email"> Email: </label>
+            <input id="email" name="email" placeholder="Enter you email" />
+          </div>
+          <div>
+            <label for="message"> Message: </label>
+            <textarea
+              placeholder="Please write any message for me.."
+            ></textarea>
+          </div>
+          <button>Send Message</button>
+        </form>
+        <div class="btn">
+            <a href="tel:47897898798">
+                Call Me directly
+            </a>
+        </div>
+        <div class="btn">
+            <a href="mailto:abc@gmail.com">
+                Send Email to Me
+            </a>
+        </div>
+      </section>
+    </main>
+    <footer>
+        Created by Utkarsh Gupta with ❤️, 2023 &#169; <a href="#">Go to top</a>
+    </footer>
+  </body>
+</html>
