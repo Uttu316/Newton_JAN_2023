@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selectors</title>
+    <style>
+        input{
+            margin: 20px;
+        }
+        input:disabled{
+            border:1px solid blue;
+        }
+        input[disabled]{
+            background-color: lightgray;
+        }
+        button[disabled]{
+            background-color: lightgray;
+            padding: 10px;
+            border: none;
+            cursor: not-allowed;
+        }
+        input[type='number']{
+            border: 2px solid red;
+        }
+        input[value~='x']{
+            color: pink;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <ul>
+        <li>Parag</li>
+        <li>Satyam</li>
+        <li >Dhanjyoti</li>
+        <li>Mithun</li>
+      </ul>
+    </div>
+    <div class="form-container">
+       <input disabled placeholder="Name"/>
+       <input disabled type="number" placeholder="Phone"/>
+       <input value="x" required type="email" placeholder="Email"/>
+       <button disabled>
+        Place Order
+       </button>
+    </div>
+  </body>
+</html>
