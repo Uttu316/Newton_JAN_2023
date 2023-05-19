@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resonsive Web</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      * {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .heading {
+        text-align: center;
+        margin: 20px;
+      }
+      .weather-card {
+        margin: 20px 0px;
+        box-shadow: 0px 2px 4px #cccc;
+        border-top: 1px solid lightgray;
+        border-bottom: 1px solid lightgray;
+      }
+      .weather-details {
+        position: relative;
+        height: 250px;
+        display: flex;
+        flex-direction: column;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url("https://png.pngtree.com/thumb_back/fh260/back_our/20190625/ourmid/pngtree-blue-arc-weather-background-image_253195.jpg");
+      }
+      .weather-details::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.1);
+        z-index: 1;
+      }
+      .weather-details-info {
+        position: relative;
+        z-index: 2;
+      }
+      .weather-day {
+        margin-top: 20px;
+        margin-left: 20px;
+      }
+      .weather-date {
+        margin-top: 10px;
+        margin-left: 20px;
+
+        color: gray;
+        font-weight: bold;
+      }
+      .weather-temp {
+        margin-top: 40px;
+        font-size: 40px;
+        margin-left: 20px;
+      }
+      .weather-condition {
+        margin-top: 5px;
+        margin-left: 20px;
+        color: gold;
+      }
+      .weather-stats {
+        display: flex;
+        overflow: auto;
+      }
+      .weather-stats-item {
+        border-right: 1px solid lightgray;
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 10px;
+        gap: 8px;
+      }
+      .weather-stats-item:last-child {
+        border-right: none;
+      }
+      .weater-stat-title,
+      .weater-stat-deg {
+        font-size: 12px;
+        color: gray;
+      }
+      .weater-stat-icon {
+        color: gold;
+      }
+      /* @media (max-width:460px) {
+            .container{
+                background-color: red;
+            }
+             .container-box{
+                border: 10px solid pink;
+             }
+        } */
+
+
+      @media (min-width: 576px) {
+        .weather-details {
+          height: 320px;
+        }
+      }
+      @media (min-width: 768px) {
+        .weather-details {
+          height: 360px;
+        }
+        .weather-card {
+          max-width: 700px;
+          margin: 20px auto;
+        }
+      }
+      @media (min-width: 992px) {
+        .weater-stat-title,
+        .weater-stat-deg {
+          font-size: 14px;
+        }
+      }
+
+      /* @media (orientation: landscape) {
+        body {
+          background-color: red;
+        }
+      }
+
+      @media (orientation: portrait) {
+        body {
+          background-color: blue;
+        }
+      } */
+    </style>
+  </head>
+  <body>
+    <h1 class="heading">Weather Report</h1>
+    <div class="weather-card">
+      <div class="weather-details">
+        <div class="weather-details-info">
+          <h2 class="weather-day">Friday</h2>
+          <p class="weather-date">18 May, 2023 Agra, India</p>
+          <h2 class="weather-temp">43℃</h2>
+          <p class="weather-condition">Summer</p>
+        </div>
+      </div>
+      <div class="weather-stats">
+        <div class="weather-stats-item">
+          <p class="weater-stat-title">Sun</p>
+          <p class="weater-stat-icon">
+            <i class="fa-solid fa-cloud"></i>
+          </p>
+          <p class="weater-stat-deg">43℃</p>
+        </div>
+        <div class="weather-stats-item">
+          <p class="weater-stat-title">Mon</p>
+          <p class="weater-stat-icon">
+            <i class="fa-solid fa-cloud"></i>
+          </p>
+          <p class="weater-stat-deg">43℃</p>
+        </div>
+        <div class="weather-stats-item">
+          <p class="weater-stat-title">Tue</p>
+          <p class="weater-stat-icon">
+            <i class="fa-solid fa-cloud"></i>
+          </p>
+          <p class="weater-stat-deg">43℃</p>
+        </div>
+        <div class="weather-stats-item">
+          <p class="weater-stat-title">Wed</p>
+          <p class="weater-stat-icon">
+            <i class="fa-solid fa-cloud"></i>
+          </p>
+          <p class="weater-stat-deg">43℃</p>
+        </div>
+        <div class="weather-stats-item">
+          <p class="weater-stat-title">Thur</p>
+          <p class="weater-stat-icon">
+            <i class="fa-solid fa-cloud"></i>
+          </p>
+          <p class="weater-stat-deg">43℃</p>
+        </div>
+        <div class="weather-stats-item">
+          <p class="weater-stat-title">Fri</p>
+          <p class="weater-stat-icon">
+            <i class="fa-solid fa-cloud"></i>
+          </p>
+          <p class="weater-stat-deg">43℃</p>
+        </div>
+        <div class="weather-stats-item">
+          <p class="weater-stat-title">Sat</p>
+          <p class="weater-stat-icon">
+            <i class="fa-solid fa-cloud"></i>
+          </p>
+          <p class="weater-stat-deg">43℃</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
