@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transformation | Transition | Animation</title>
+    <style>
+      .box {
+        height: 200px;
+        width: 200px;
+        border: 2px solid brown;
+      }
+      .center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .translate-100 {
+        transform: translate(100px, 100px);
+        /* 
+                 transform: translateX(100px);
+                  transform: translateY(100px);
+             */
+      }
+      .scale-2X {
+        transform: scale(2);
+        /* 
+                 transform: scaleX(2);
+                  transform: scaleY(1.5);
+             */
+      }
+      .rotation-45 {
+        transform: rotate(45deg);
+        /* 
+                 transform: rotateX(2);
+                  transform: rotateY(1.5);
+             */
+      }
+
+      .transform{
+        transform: translateX(100px) rotate(45deg) scale(0.5);
+      }
+
+      .transition{
+        background-color: red;
+        color: blue;
+        transition-property:  all;
+        transition-duration: 3s;
+        /* transition-delay: 2s; */
+        /* transition-timing-function: cubic-bezier() ; */
+        /* transition: all 3s ease 2s; */
+      }
+      .transition:hover{
+        background-color: lightblue;
+        color: green;
+        transform: rotate(360deg);
+      }
+      .animation-rotation{
+        animation-name: keep-rotaiton;
+        animation-iteration-count: infinite;
+        animation-duration: 4s;
+        animation-fill-mode: forwards;
+        /* animation-delay:2s; */
+       /* animation-play-state: running; */
+        /* animation-direction: reverse; */
+        /* animation-timing-function: ease-in-out; */
+
+        /* animation: keep-rotaiton 2s forwards reverse ease 4s; */
+
+      }
+
+      @keyframes keep-rotaiton {
+            /* from{
+                transform: rotate(0deg);
+            }
+            to{
+                transform: rotate(360deg);
+            } */
+
+            0%{
+                transform: rotate(0deg);
+                background-color: red;
+            }
+            25%{
+                transform: rotate(45deg);
+                background-color: blue;
+            }
+            50%{
+                transform: rotate(90deg);
+                background-color: green;
+            }
+            75%{
+                transform: rotate(270deg);
+                background-color: pink;
+            }
+            100%{
+                transform: rotate(360deg);
+                background-color: gray;
+            }
+      }
+
+    </style>
+  </head>
+  <body>
+    <!-- Paired Tags -->
+    <h1>Transformation</h1>
+    <!-- Unpaired Tags -->
+
+ <!-- <div class="box center translate-100">A</div>
+    <div class="box center scale-2X">B</div> 
+    <div class="box center rotation-45">C</div> -->
+    <div class="box center transform">
+        D
+    </div>
+    <hr />
+    <h1>Transition</h1>
+    <div class="box center transition">
+        E
+    </div>
+    <hr />
+    <h1>Animation</h1>
+    <div class="box center animation-rotation">
+        F
+    </div>
+  </body>
+</html>
