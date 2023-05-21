@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layout</title>
+    <style>
+        #header{
+            grid-area: header;
+        }
+        #menu{
+            grid-area: menu;
+        }
+        #main{
+            grid-area: main;
+        }
+        #right{
+            grid-area: right;
+        }
+        #footer{
+            grid-area: footer;
+        }
+        .container{
+            grid-template-areas: 'header header header header'
+                                 'menu main main right'
+                                 'menu footer footer footer'
+            
+            
+            ;
+            display: grid;
+        }
+        .item{
+            border: 4px solid blue;
+            padding: 10px;
+        }
+        
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header id="header" class="item">Header</header>
+      <aside id="menu" class="item">Menu</aside>
+      <main id="main" class="item">Main</main>
+      <aside id="right" class="item">Right</aside>
+      <footer id="footer" class="item">Footer</footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid</title>
+    <style>
+      .grid-container {
+        border: 5px solid red;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        /* 
+         grid-template-columns: 200px 1fr 1fr;
+          grid-template-columns: repeat(3,1fr);
+        */
+        grid-template-rows: repeat(3,100px);
+       grid-auto-flow: column dense;
+
+        /* works with flexbox and grid */
+        /* gap:20px 30px; */
+
+        /* works onlyn in grid  */
+        
+        /* column-gap: 20px;
+        row-gap: 20px; */
+      }
+      .grid-item{
+        border: 2px dashed green;
+      }
+
+      #A{
+        grid-column-start: 1;
+        grid-column-end:3;
+      }
+      #G{
+        grid-column-start:3 ;
+        grid-column-end: 4;
+      }
+      #C{
+        grid-row-start: -1;
+        grid-row-end: -3;
+      }
+      #B{
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to Grid Layout</h1>
+    <div class="grid-container">
+      <div id="A" class="grid-item">A</div>
+      <div id="B" class="grid-item">B</div>
+      <div id="C" class="grid-item">C</div>
+      <div class="grid-item">D</div>
+      <div class="grid-item">E</div>
+      <div class="grid-item">F</div>
+      <div id="G" class="grid-item">G</div>
+      <div class="grid-item">H</div>
+      <div class="grid-item">I</div>
+    </div>
+
+  </body>
+</html>
