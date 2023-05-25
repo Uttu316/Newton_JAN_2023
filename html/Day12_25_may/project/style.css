@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+}
+
+#hero-section {
+  height: 100%;
+  background-image: url("https://e0.pxfuel.com/wallpapers/914/372/desktop-wallpaper-developer-for-for-programmers-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  background-position: 50%;
+}
+
+.hero-text {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  color: white;
+  margin: 0 auto;
+  margin-top: 8%;
+}
+
+.greetings {
+  font-size: 36px;
+  text-align: left;
+}
+.greetings .name {
+  font-size: 28px;
+}
+
+.designation {
+  font-size: 40px;
+  margin-top: 4px;
+  text-transform: uppercase;
+}
+
+#black-box {
+  background-color: #000;
+  padding: 10px 20px;
+  text-align: center;
+}
+.black-box-heading {
+  font-size: 80px;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  color: white;
+  text-transform: uppercase;
+}
+.fnt-lg {
+  font-size: 96px;
+}
+
+#card-section {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(340px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 60px auto;
+}
+
+#bottom-section {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 40px;
+
+}
+.bottom-container-actions{
+  display: flex;
+  align-items: center;
+  gap:8px;
+}
+.bottom-container-actions a {
+  text-decoration: none;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: lightcoral;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  transition: all .5s;
+}
+
+.bottom-container-actions a:hover{
+  transform: scale(1.2) rotate(20deg);
+}
+
+
+
+@media (max-width:768px) {
+  #hero-section{
+    height: 50%;
+  }
+}
