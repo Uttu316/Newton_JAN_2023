@@ -1,7 +1,7 @@
 var fName = "Utkarsh"
 var lName = "Gupta"
 
-
+console.log(fName+lName)
 // creating an element
 const el = document.createElement('h2');
 
