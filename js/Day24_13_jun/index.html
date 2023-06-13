@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table</title>
+  </head>
+  <body>
+    <!-- Do not edit this you need to use JS to scrap prices and display their sum -->
+    <h1>Grocery List</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Sr. No.</th>
+          <th>Title</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Item-1</td>
+          <td data-ns-test="price">100</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Item-2</td>
+          <td data-ns-test="price">200</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Item-3</td>
+          <td data-ns-test="price">2</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Item-4</td>
+          <td data-ns-test="price">1</td>
+        </tr>
+      </tbody>
+    </table>
+    <button onClick="calcTotal()">Total</button>
+    <script>
+      let time = 1;
+      function calcTotal() {
+        const priceEl = document.querySelectorAll('td[data-ns-test="price"]');
+        let sum =0
+        for(let i of priceEl){
+            sum+=Number(i.innerHTML);
+        }
+        
+        if (time === 1) {
+            const table = document.querySelector('table tbody');
+          let lastRow = document.createElement("tr");
+          let child0 = document.createElement("td");
+          let child = document.createElement("td");
+          child0.textContent = "Grand Total";
+          child.setAttribute("data-ns-test", "grandTotal");
+          child.textContent = sum;
+          lastRow.appendChild(child0);
+          lastRow.appendChild(child);
+          table.appendChild(lastRow);
+        } else {
+          const totalEl = document.querySelector(
+            'td[data-ns-test="grandTotal"]'
+          );
+          totalEl.innerHTML = sum;
+        }
+        time++;
+      }
+    </script>
+  </body>
+</html>
