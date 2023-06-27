@@ -65,6 +65,7 @@ function sum(x) {
   };
 }
 
+// currying
 console.log(sum(2)(3)(0)(8)(3)());
 
 var Sum = (x) => (y) => y != null ? Sum(x + y) : x;
