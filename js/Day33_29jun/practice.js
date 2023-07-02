@@ -51,17 +51,15 @@ console.log("a");
 f();
 console.log("b");
 
-
-
 const asyncFunc = async () => {
-    return "I am async"
-  }
-  
-  
-  const getValueFromAsync = async () => {
-    const value = await asyncFunc()
-    console.log(value)
-    return value
-  }
-  
-  console.log(getValueFromAsync())
+  return "I am async";
+};
+
+const getValueFromAsync = async () => {
+  const value = await asyncFunc();
+  console.log(value);
+  return value;
+};
+
+console.log(getValueFromAsync());
+
