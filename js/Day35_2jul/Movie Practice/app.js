@@ -45,7 +45,9 @@ function createMovieCard(movieDetails) {
 
 async function getSeats(movieName) {
   $("#booker h3").removeClass("v-none");
+  document.querySelector('#booker-grid-holder').innerHTML = ''
   $("#booker").append(loader);
+  
 
   // unavaible seats
   const seats = await fetchMovieAvailability(movieName);
@@ -53,11 +55,11 @@ async function getSeats(movieName) {
   createTicketsGrid(seats);
 }
 
-function createGridBox(seats, isRight) {
+function createGridBox(unavaibleSeats, isRight) {
   const gridBox = $(`<div class="booking-grid"></div>`);
 
   for (let i = isRight ? 13 : 1; i <= (isRight ? 24 : 12); i++) {
-    const isUnavailable = seats.includes(i);
+    const isUnavailable = unavaibleSeats.includes(i);
     const gridItem = $(
       `<div id="booking-grid-${i}" class="${
         isUnavailable ? "unavailable-seat" : "available-seat"
@@ -78,7 +80,7 @@ function createGridBox(seats, isRight) {
 function createTicketsGrid(seats) {
   const lgrid = createGridBox(seats);
   const rgrid = createGridBox(seats, true);
-
+  document.querySelector('#booker-grid-holder').innerHTML = ''
   $("#booker-grid-holder").append(lgrid);
   $("#booker-grid-holder").append(rgrid);
 }
