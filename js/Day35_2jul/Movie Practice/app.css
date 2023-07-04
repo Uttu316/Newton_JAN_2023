@@ -71,3 +71,11 @@ nav ul {
 .selected-seat {
   border: 4px outset rgb(0, 0, 0);
 }
+
+#customer-detail-form {
+  margin-top: 20px;
+
+}
+#customer-detail-form div{
+  margin-bottom: 10px;
+}

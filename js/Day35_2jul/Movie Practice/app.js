@@ -3,6 +3,7 @@ import { fetchMovieList, fetchMovieAvailability } from "./api.js";
 const loader = $('<div id="loader">Loading...</div>');
 
 getMovieList();
+
 const selecetedSeats = [];
 
 async function getMovieList() {
@@ -46,6 +47,7 @@ async function getSeats(movieName) {
   $("#booker h3").removeClass("v-none");
   $("#booker").append(loader);
 
+  // unavaible seats
   const seats = await fetchMovieAvailability(movieName);
   loader.remove();
   createTicketsGrid(seats);
@@ -90,4 +92,76 @@ function selectSeat(seatNo, gridItem) {
     selecetedSeats.push(seatNo);
     gridItem.addClass("selected-seat");
   }
+
+  if (selecetedSeats.length) {
+    $("#book-ticket-btn").removeClass("v-none");
+  } else {
+    $("#book-ticket-btn").addClass("v-none");
+  }
+}
+
+const bookSeatbtn = $("#book-ticket-btn")[0];
+bookSeatbtn.addEventListener("click", function (e) {
+  const confirmForm = createBookingForm(selecetedSeats);
+  // el.innerHTML = ''
+  $("#booker").html(confirmForm);
+});
+
+function createBookingForm(selecetedSeats) {
+  const container = $(`
+    <div id="confirm-purchase">
+      <h3>
+      Confirm your booking for seat numbers:${selecetedSeats.join(", ")}
+      </h3>
+      <form id="customer-detail-form">
+        <div>
+        <label for="email">Email</label>
+        <input required type="email" id="email" name="email"/>
+        </div>
+        <div>
+        <label for="phone">Phone</label>
+        <input required type="tel" id="phone" name="phone"/>
+        </div>
+        <input type="submit"  value="Purchase"/>
+      </form>
+    </div>
+  `);
+
+  const form = container.find("#customer-detail-form")[0];
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const data = new FormData(form);
+
+    let details = {
+      selecetedSeats,
+    };
+    for (const [name, value] of data) {
+      details[name] = value.trim();
+    }
+
+    const bookingDetails = createBookingDetails(details);
+    $("#booker").html(bookingDetails);
+  });
+  return container;
+}
+
+function createBookingDetails(details) {
+  const { email, phone, selecetedSeats } = details;
+  const container = $(`
+    <div id="Success">
+      <h3>Booking details</h3>
+      <div>
+      Seats:${selecetedSeats.join(", ")}
+      </div>
+      <div>
+      Phone number: ${phone}
+      </div>
+      <div>
+      Email: ${email}
+      </div>
+    </div>
+  `);
+  return container;
 }
