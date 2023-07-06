@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  box-shadow: 2px 4px 2px rgba(17, 16, 16, 0.5);
+}
+.header .logo {
+  font-size: 30px;
+  font-weight: 500;
+  color: brown;
+}
+.header .logo span {
+  color: #009688;
+}
+.header nav {
+  display: none;
+  align-items: center;
+  gap: 10px;
+}
+.header nav a {
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 20px;
+  color: black;
+}
+.header .header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.header .header-actions .header-action-item {
+  padding: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  color: black;
+}
+.header .header-actions .header-action-item a {
+  color: black;
+}
+
+.header nav a:hover {
+  color: brown;
+}
+#mobile-menu-btn {
+  display: inline-block;
+}
+.product-categories {
+  margin: 40px 20px;
+}
+.product-category-title {
+  font-size: 26px;
+  font-weight: 400;
+}
+.product-category-cards {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 960px;
+  margin: 40px auto;
+  gap: 40px;
+}
+.product-category-card {
+  width: 200px;
+  box-shadow: 0px 4px 4px #ccc;
+  flex-direction: column;
+  justify-content: space-between;
+  display: flex;
+}
+.product-category-card-img {
+  height: 250px;
+  width: 100%;
+}
+.product-category-card-details {
+  padding: 10px;
+}
+.product-category-card-title {
+  font-size: 20px;
+  color: black;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+.product-category-card-brand {
+  color: #6e6e6e;
+  /* padding: 4px 8px; */
+  border-radius: 20px;
+  display: inline-block;
+  font-size: 12px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+.product-category-card-price {
+  color: #009688;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+.product-category-card-link {
+  display: flex;
+  text-decoration: none;
+}
+@media (min-width: 720px) {
+  .header {
+    justify-content: space-around;
+  }
+  .header .logo {
+    font-size: 32px;
+  }
+  .header nav {
+    display: flex;
+  }
+  #mobile-menu-btn {
+    display: none;
+  }
+  .product-categories {
+    margin: 40px;
+  }
+}
