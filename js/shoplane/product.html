@@ -15,7 +15,9 @@
     />
     <link href="./style.css" rel="stylesheet" />
     <link
-      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css"  rel="stylesheet"/>
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -31,13 +33,9 @@
     />
   </head>
   <body>
-    <header class="header">
+    <header class="header" id="product-header">
       <h1 class="logo">Shop<span>Kart</span></h1>
-      <nav>
-        <a href="#"> Home </a>
-        <a href="#clothing"> Clothings </a>
-        <a href="#accessories"> Accessories </a>
-      </nav>
+
       <div class="header-actions">
         <div class="header-action-item">
           <i class="fa-solid fa-magnifying-glass"></i>
@@ -50,46 +48,34 @@
         <div class="header-action-item">
           <i class="fa-solid fa-user"></i>
         </div>
-        <div class="header-action-item" id="mobile-menu-btn">
-          <i class="fa-solid fa-bars"></i>
-        </div>
       </div>
     </header>
     <main>
-      <div class="hero-banner">
-        <!-- Carousel -->
-        <div  id="hero-carousel">
-          <div class="hero-carousel-item"> 
-            <div class="circle center">
-              Sale 20% OFF
-            </div>
-            <img src="https://wallpaperaccess.com/full/2593105.jpg"/>
-          </div>
-          <div class="hero-carousel-item">
-            <img src="https://www.wallpapertip.com/wmimgs/23-237021_comercio-electronico-e-commerce.jpg"/>
-          </div>
-          <div class="hero-carousel-item">
-            
-            <img src="https://wallpaperaccess.com/full/8651099.jpg"/>
+      <div id="product-detials" class="product-details-container">
+        <div class="product-details-preview">
+          <img id="product-preview" src="" alt="" />
+        </div>
+        <div class="product-details-content">
+          <h1 class="product-details-title" id="product-title">Product</h1>
+          <h3 class="product-details-brand" id="product-brand">Brand</h3>
+          <p class="product-details-label">
+            Price : Rs
+            <span class="product-details-price" id="product-price"></span>
+          </p>
+          <p class="product-details-label">Description</p>
+          <p id="product-description" class="product-details-description"></p>
+          <p class="product-details-label">Product Preview</p>
+          <div id="product-previews" class="product-details-label"></div>
+          <div class="product-details-actions">
+            <button class="product-details-action-btn">Add to Cart</button>
           </div>
         </div>
-      </div>
-      <div class="features-banner">
-        <!-- Features -->
-      </div>
-      <div class="product-categories">
-        <h2 class="product-category-title">Clothings for Men and Women</h2>
-        <div class="product-category-cards" id="clothings"></div>
-      </div>
-      <div class="product-categories">
-        <h2 class="product-category-title">Accessories for Men and Women</h2>
-        <div class="product-category-cards" id="accessories"></div>
       </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
     <script src="
 https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js
 "></script>
-    <script type="module" src="./scripts/home.js"></script>
+    <script type="module" src="./scripts/product.js"></script>
   </body>
 </html>
