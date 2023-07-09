@@ -1,4 +1,4 @@
-import { END_POINTS } from "./config.js";
+import { Cart, END_POINTS } from "./config.js";
 
 function getSearchKey(key) {
   const search = location.search;
@@ -18,6 +18,7 @@ async function getProductDetails() {
       const res = await $.get(url);
       //   console.log(res)
       addProductDeailsToDom(res);
+      onClickAddToCart(res);
     } catch (e) {
       console.log(e);
     }
@@ -28,6 +29,8 @@ async function getProductDetails() {
 
 function addProductDeailsToDom(productDetails) {
   const { name, price, photos, description, brand } = productDetails;
+
+  document.title = `${name} |  Shopkart | A Trendy Ecommerce`;
 
   $("#product-title").html(name);
   $("#product-brand").html(brand);
@@ -43,7 +46,22 @@ function addProductDeailsToDom(productDetails) {
     <div class="product-preview-item ${index === 0 ? "selected" : ""}">   
     <img src=${photo} alt="photo-${index + 1}" />
     </div>
-    `);
+    `)[0];
+    photoFrame.addEventListener("click", function (e) {
+      $("#product-preview").attr({
+        src: photo,
+      });
+      $(".product-preview-item.selected").removeClass("selected");
+      $(this).addClass("selected");
+    });
     photosContainer.append(photoFrame);
+  });
+}
+
+function onClickAddToCart(producDetails) {
+  const cart = new Cart();
+  cart.updateCartIcon();
+  $("#add-to-cart").on("click", function (e) {
+   cart.add(producDetails)
   });
 }

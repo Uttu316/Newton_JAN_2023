@@ -1,8 +1,9 @@
-import { END_POINTS } from "./config.js";
+import { Cart, END_POINTS, initCart } from "./config.js";
 
 $(() => {
   addHeroCarousel();
   getProducts();
+  initCart()
 });
 
 function addHeroCarousel() {

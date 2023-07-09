@@ -34,14 +34,16 @@
   </head>
   <body>
     <header class="header" id="product-header">
-      <h1 class="logo">Shop<span>Kart</span></h1>
+      <a class="logo-link" href="/index.html">
+        <h1 class="logo">Shop<span>Kart</span></h1>
+      </a>
 
       <div class="header-actions">
         <div class="header-action-item">
           <i class="fa-solid fa-magnifying-glass"></i>
         </div>
         <div class="header-action-item">
-          <a href="/cart.html">
+          <a href="./cart.html">
             <i class="fa-solid fa-cart-shopping"></i>
           </a>
           <div id="cart-header-count" class="center">0</div>
@@ -51,26 +53,43 @@
         </div>
       </div>
     </header>
-    <main>
-      <div id="product-detials" class="product-details-container">
-        <div class="product-details-preview">
-          <img id="product-preview" src="" alt="" />
+    <main id="cart-body">
+      <div class="cart-container">
+        <div class="cart-table">
+          <h3 class="cart-summary-heading">Cart Products</h3>
+          <div id="cart-products-table"></div>
         </div>
-        <div class="product-details-content">
-          <h1 class="product-details-title" id="product-title">Product</h1>
-          <h3 class="product-details-brand" id="product-brand">Brand</h3>
-          <p class="product-details-label">
-            Price : Rs
-            <span class="product-details-price" id="product-price"></span>
-          </p>
-          <p class="product-details-label">Description</p>
-          <p id="product-description" class="product-details-description"></p>
-          <p class="product-details-label">Product Preview</p>
-          <div id="product-previews" class="product-details-label"></div>
-          <div class="product-details-actions">
-            <button id="add-to-cart" class="product-details-action-btn">
-              Add to Cart
-            </button>
+        <div id="cart-summary" class="cart-summary-wrapper">
+          <div  class="cart-summary">
+            <h3 class="cart-summary-heading">Cart Summary</h3>
+            <div class="cart-summary-item">
+              <div class="cart-summary-item-label">Total Items:</div>
+              <div id="cart-summary-items" class="cart-summary-item-value">
+                0
+              </div>
+            </div>
+            <div class="cart-summary-item">
+              <div class="cart-summary-item-label">Total Price:</div>
+              <div id="cart-summary-price" class="cart-summary-item-value">
+                0
+              </div>
+            </div>
+            <div class="cart-summary-item">
+              <div class="cart-summary-item-label">Discount:</div>
+              <div id="cart-summary-discount" class="cart-summary-item-value">
+                0
+              </div>
+            </div>
+            <hr class="cart-summary-divider" />
+            <div class="cart-summary-item">
+              <div class="cart-summary-item-label-heading">Grand Total:</div>
+              <div id="cart-summary-total" class="cart-summary-item-value">
+                0
+              </div>
+            </div>
+          </div>
+          <div class="cart-place-order-container">
+            <button id="cart-place-order">Place Order</button>
           </div>
         </div>
       </div>
@@ -79,6 +98,6 @@
     <script src="
 https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js
 "></script>
-    <script type="module" src="./scripts/product.js"></script>
+    <script type="module" src="./scripts/cart.js"></script>
   </body>
 </html>
